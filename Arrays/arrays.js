@@ -37,9 +37,38 @@
 // nums.forEach(array);
 
 let nums = [25,23,24,22,31,1,12,22];
+let num2 = [41,42,43,44,45]
 
+
+// Map (help to make the all the element differnet or change the element . )
 let a = nums.map((value) => {
   return value*2 ; 
 });
 console.log(nums.toString());
 console.log(a.toString());
+
+// Filter .  (help to find element which given condition)
+let b = nums.filter((value)=>{
+  return  value > 30;
+})
+console.log(b.toString());
+
+// Different between splice and slice . 
+// splice remove the element from the original array . 
+// nums.splice(0,2);
+// let d =  nums.slice(0,2); :- give a new array with number of element you want . 
+// console.log(d.toString());
+// console.log(Array.isArray(nums));
+
+
+// Destructing . 
+let a1 = [...nums,...num2];
+console.log(a1.toString());
+let b2 = nums.concat(num2);
+console.log(b2.toString());
+a1.sort();
+console.log(a1.toString());
+let c1 = a1.sort((a,b)=>{
+  return b-a;
+});
+console.log(c1.toString());
