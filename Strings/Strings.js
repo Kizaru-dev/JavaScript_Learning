@@ -1,12 +1,22 @@
 // Everything about Strings / 
 
-const name = ["priyanshu","himanshu","Priyan","Shagun","Shudash"];
-console.log(name.length); // lenght of the string . 
+let n = "       priyanshu      ";
 
-let name1 = 'Hum aur code';
-console.log(`Channel Name  = ${name1}`);
+// How to remove extra spaces from the string.
+console.log(n.trim());
 
-let a = "apple";
-let b = a ; 
-b = "banana";
-console.log(a,b); // string are immutable . 
+//
+// let name =  "Priya \nnshu";
+// console.log(name);
+
+let a = "12";
+let b = 12 ;
+console.log(a === b ); // comapre the value and datatype of the varaible.
+console.log(a == b); // compare the value of both the varaible.
+
+let name = "Hum aur code " ;
+console.log(name.search("d")); // It's return the index of the string .
+console.log(name.match("d")); // It's return all the data and  new string of the string.
+
+
+
