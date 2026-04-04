@@ -128,25 +128,21 @@ function transferMoney(){
 
     let sender  = null ;
     let receiver = null ;
-    let found = false ;
     for(let i = 0 ;i < accounts.length ; i++){
         if(accounts[i].accNum === sendAccNo){
-            sender = i;
+            sender = accounts[i];
         }
         if(accounts[i].accNum === receiveAccNo){
-            receiver = i;
+            receiver = accounts[i];
         }
-        if(amount > 0 && accounts[sender].balance >= amount  ){
-            accounts[sender].balance -= amount ;
-            accounts[receiver].balance += amount ;
-            console.log("Transfer Successfully");
-            found = true ;
-            break ;
-        }
-
     }
-    if(!found){
-        console.log("Account not found > ");
+
+    if(amount > 0 && sender.balance >= amount){
+        sender.balance -= amount ;
+        receiver.balance += amount ;
+        console.log("Transfer successfully.");
+    }else{
+        console.log("Transfer successfully.");
     }
     showMenu();
 }
