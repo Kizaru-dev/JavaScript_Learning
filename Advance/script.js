@@ -1,45 +1,41 @@
-// How to select an element .
-/*
-1. get element by id
-2. get element by class
-3. query selector .
-4. query selector all .
- */
-// How to change text .
-/*
-    1. innermost;
-    2. inner text ;
-    3. innerContent ;
+// Async
+// line by line .
+// setInterval(()=>{
+//     console.log("i am async function");
+// },5000);
 
- */
-// How to get attribute / set attribute .
-/*
-    1. setAttribute , get attribute , a.id = "name of the attribute ".
- */
-// How to create new element . -> by using createElement ,
-// How to change style .
+// Promise two parts accept reject pending
+// let promise = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         if(5 > 12){
+//             resolve("Response OK");
+//         }else{
+//             reject("Reject 404");
+//         }
+//     },5000)
+// })
+//
+// async function name (){
+//     try{
+//         let a = await promise ;
+//         console.log(a);
+//     }
+//     catch(err){
+//         console.log(err);
+//     }
+// }
 
-// Events in JavaScript .
-// actions perform by keyboard/mouse are called events , we can customize the code .
+// Fetch = to bring data from somewhere .
+let img = document.querySelector("img");
 
-let h1 = document.querySelector("h1");
-
-window.addEventListener("keydown", function(event){
-    if(event.key === " "){
-        h1.textContent = "space";
-    }else{
-        h1.textContent = event.key;
-    }
+fetch("https://dog.ceo/api/breeds/image/random")
+.then((Response)=>{
+        return Response.json();
 })
-
-let div1 = document.querySelector("#div1");
-let div2 = document.querySelector("#div2");
-
-
-div2.addEventListener("click", function(event){
-    div2.style.backgroundColor = "green";
-})
-
-div1.addEventListener("click", function(event){
-    div1.style.backgroundColor = "yellow";
+    .then((response)=>{
+        console.log(response.message);
+        img.setAttribute("src", response.message);
+    })
+.catch((err)=>{
+    console.log(err);
 })
